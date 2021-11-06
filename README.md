@@ -16,5 +16,7 @@ Digunaan dengan Raspberry pi – OS rasbian
 - [https://github.com/mxgxw/MFRC522-python](https://github.com/mxgxw/MFRC522-python)
 - Change the print &quot;&quot; to print() if you use python3
 
+3. run with file `guiMain2.py`
+
 ### note
 for spesifict find to instal ```face-recognition``` lib
