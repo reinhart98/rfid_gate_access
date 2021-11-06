@@ -1,0 +1,114 @@
+<WindowManager>:
+	StartWindow:
+		id: StartWindow
+	RecogWindow:
+		id: RecogWindow
+	EndWindowFail:
+		id: EndWindowFail
+	EndWindowSuccess:
+		id: EndWindowSuccess
+	
+	
+
+<StartWindow>:
+    name: "start"
+    canvas.before:
+        Color:
+            rgba:(240/255,240/255,240/255,1)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    FloatLayout:
+        orientation:'vertical'
+        Label:
+            text:"[color=100f0d]Tempelkan ID Card Anda[/color]"
+            size_hint:1,0.6
+            font_size:'30sp'
+            markup:True
+        Label:
+            text:"[color=100f0d]Tempelkan pada alat scan[/color]"
+            size_hint:1,0.5
+            markup:True
+        Label:
+            text:"[color=fefefe][/color]"
+            size_hint:1,0.5
+            markup:True
+        Image:
+            source:'assets/tabImg.png'
+            size: self.texture_size
+
+
+<RecogWindow>:
+    name: "recog"
+    BoxLayout:
+        orientation:'horizontal'
+       
+<EndWindowFail>:
+    name: "endF"
+    canvas.before:
+        Color:
+            rgba:(240/255,240/255,240/255,1)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+            
+    msgId:msgId
+    
+    FloatLayout:
+        Image:
+            source:'assets/failedIcon.png'
+            size: self.texture_size
+            size_hint:1,1.2
+        Label:
+            text:"[color=eb3434]Verifikasi Gagal[/color]"
+            size_hint:1,1.9
+            font_size:'35sp'
+            markup:True
+        Label:
+			id:msgId
+            text:''
+            size_hint:1,1.8
+            markup:True
+        Label:
+            text:"[color=000000]Silahkan Tab kembali kartu ID anda[/color]"
+            size_hint:1,1.75
+            markup:True
+        Label:
+            text:"[color=eb3434]Silahkan Coba Tab Lagi[/color]"
+            size_hint:1,0.7
+            font_size:'30sp'
+            markup:True
+        Image:
+            source:'assets/tabImg.png'
+     
+            size_hint:1,0.3
+
+<EndWindowSuccess>:
+	name:"endS"
+	msg:msg
+    canvas.before:
+        Color:
+            rgba:(240/255,240/255,240/255,1)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    FloatLayout:
+        Image:
+            source:'assets/welcome.png'
+            size: self.texture_size
+            size_hint:1,1.2
+        
+        Label:
+			id:msg
+            text:"[color=2A2A2A]Selamat Datang,[/color]"
+            size_hint:1,0.7
+            font_size:'28sp'
+            markup:True
+
+        Label:
+            text:"[color=878787]Selamat bekerja & beraktivitas[/color]"
+            size_hint:1,0.6
+            font_size:'28sp'
+            markup:True
+
+
